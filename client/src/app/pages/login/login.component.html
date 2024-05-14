@@ -1,14 +1,46 @@
-<div>
-  <form>
-    <label for="username">Username:</label>
-    <input type="text"  name="username" required />
-
-    <label for="email">Email:</label>
-    <input type="email"  name="email" required />
-
-    <label for="password">Password:</label>
-    <input type="password"  name="password" required />
-
-    <button type="submit">Create User</button>
-  </form>
-</div>
+<body>
+  <div class="container login-container">
+    <div class="login-form">
+      <h1 class="text-center mb-4">Login</h1>
+      <div class="container login-container ">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              formControlName="username"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              formControlName="email"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              formControlName="password"
+              required
+              class="form-control"
+            />
+          </div>
+          <p class="text-center">Complete the form to enable button.</p>
+          <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
